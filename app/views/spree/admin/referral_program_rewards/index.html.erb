@@ -1,0 +1,30 @@
+<% content_for :page_title do %>
+  <%= plural_resource_name(Spree::ReferralProgramReward) %>
+<% end %>
+
+<% if @referral_program_rewards.any? %>
+  <table class="table">
+    <thead>
+      <tr data-hook="admin_referral_program_rewards">
+        <th><%= Spree.t(:date) %></th>
+        <th><%= Spree.t(:user) %></th>
+        <th><%= Spree.t(:order) %></th>
+        <th><%= Spree.t(:amount) %></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @referral_program_rewards.each do |referral_program_reward| %>
+        <tr id="<%= spree_dom_id referral_program_reward %>" data-hook="admin_referral_program_rewards">
+          <td><%= order_time(referral_program_reward.order.completed_at) %></td>
+          <td><%= referral_program_reward.user.email %></td>
+          <td><%= referral_program_reward.order.number %></td>
+          <td><%= referral_program_reward.amount %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <div class="alert alert-warning">
+    <%= Spree.t(:no_resource_found, resource: plural_resource_name(Spree::ReferralProgramReward)) %>
+  </div>
+<% end %>
