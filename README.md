@@ -19,8 +19,15 @@ Introduction goes here.
   ```ruby
   bundle exec rails g spree_referral_program:install
   ```
+  
+4. Configure envs
+  ```
+  REFERRAL_PROGRAM_ADMIN_EMAILS (comma separated email addresses)
+  ENABLE_REFERRAL_PROGRAM_USER_EMAIL_NOTIFICATION (true/false)
+  ENABLE_REFERRAL_PROGRAM_ADMIN_EMAIL_NOTIFICATION (true/false)
+  ```
 
-4. Restart your server
+5. Restart your server
 
   If your server was running, restart it so that it can find the assets properly.
 
