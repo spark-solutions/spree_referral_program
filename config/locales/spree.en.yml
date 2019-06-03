@@ -1,0 +1,6 @@
+en:
+  spree:
+    promotion_action_types:
+      reward_user:
+        name: Reward user
+        description: Reward user
