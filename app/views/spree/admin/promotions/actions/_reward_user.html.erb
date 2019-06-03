@@ -1,0 +1,29 @@
+<div class="panel-body calculator-fields">
+  <div class="form-group no-marginb">
+    <%= label_tag :percent_of_commission, Spree.t(:percent_of_commission) %>
+    <%= number_field_tag "#{param_prefix}[promotion_action_reward_user_attributes][percent_of_commission]",
+                         promotion_action.promotion_action_reward_user.percent_of_commission,
+                         min: 1,
+                         max: 100, 
+                         class: 'form-control' 
+    %>
+  </div>
+
+  <div id='select-customer' class='panel panel-default'>
+    <div>
+      <%= label_tag :selected_user, Spree.t(:selected_user) + ':' %>
+      <strong><%= promotion_action.promotion_action_reward_user.user&.email || '---' %></strong>
+    </div>
+    <div class='panel-body'>
+      <%= hidden_field_tag :customer_search, promotion_action.promotion_action_reward_user.user_id, class: 'error-message' %>
+      <%= render partial: "spree/admin/orders/customer_details/autocomplete", formats: :js %>
+      <%= hidden_field_tag "#{param_prefix}[promotion_action_reward_user_attributes][user_id]", promotion_action.promotion_action_reward_user.user_id, id: :user_id, class: 'error-message' %>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $('#customer_search').on('change', function (e) {
+    $('#user_id').val(e.target.value)
+  })
+</script>
