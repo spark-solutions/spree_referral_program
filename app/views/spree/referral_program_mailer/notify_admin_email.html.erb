@@ -1,0 +1,13 @@
+<% display_amount = Spree::Money.new(@referral_program_reward.amount, { currency: @referral_program_reward.order.currency }) %>
+<table class="row header">
+  <tr>
+    <td>
+      <p class="lede">
+        Someone just used referral code.
+      </p>
+      <p>
+        <%= "Referrer should receive #{display_amount} as a reward." %>
+      </p>
+    <td class="expander"></td>
+  </tr>
+</table>
