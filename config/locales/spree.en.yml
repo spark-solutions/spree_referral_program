@@ -9,3 +9,5 @@ en:
         subject: You received referral reward
       notify_admin_email:
         subject: User received referral reward
+      report_email:
+        subject: Referral program rewards report
