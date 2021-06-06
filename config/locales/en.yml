@@ -1,5 +1,16 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  spree:
+    promotion_action_types:
+      reward_user:
+        name: Reward user
+        description: Reward user
+    referral_program_mailer:
+      notify_referrer_email:
+        subject: You received referral reward
+      notify_admin_email:
+        subject: User received referral reward
+      report_email:
+        subject: Referral program rewards report
+    admin:
+      tab:
+        referral_program_rewards: Referral Rewards
