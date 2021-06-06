@@ -1,5 +1,5 @@
 <% content_for :page_title do %>
-  <%= plural_resource_name(Spree::ReferralProgramReward).pluralize %>
+  <%= Spree.t(:referral_program_rewards) %>
 <% end %>
 
 <% if @referral_program_rewards.any? %>
